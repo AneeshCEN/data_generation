@@ -60,3 +60,22 @@ plt.ylabel('Y - axis')
 plt.legend(loc='upper right')
 plt.show()
 
+plt.figure()
+x = np.random.uniform(1,5,5000)
+y= np.random.uniform(1,5,5000)
+c=np.mod((np.floor(x)+np.floor(y)),2)
+
+ind = np.where(c==1)[0]
+ind1 = np.where(c==0)[0]
+x1 = x[ind]
+y1 = y[ind]
+x2 = x[ind1]
+y2 = y[ind1]
+
+plt.plot(x1,y1,'*', c='r',label='class 1')
+plt.plot(x2,y2, 'o',c='b',label='class 2')
+plt.title('Not linearly separable')
+plt.xlabel('X - axis')
+plt.ylabel('Y - axis')
+plt.legend(loc='upper right')
+plt.show()
